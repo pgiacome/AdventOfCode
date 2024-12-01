@@ -1,0 +1,15 @@
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/bin/Debug/net8.0/AdventOfCode2024
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/bin/Debug/net8.0/AdventOfCode2024.deps.json
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/bin/Debug/net8.0/AdventOfCode2024.runtimeconfig.json
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/bin/Debug/net8.0/AdventOfCode2024.dll
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/bin/Debug/net8.0/AdventOfCode2024.pdb
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.GeneratedMSBuildEditorConfig.editorconfig
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.AssemblyInfoInputs.cache
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.AssemblyInfo.cs
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.csproj.CoreCompileInputs.cache
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.sourcelink.json
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.dll
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/refint/AdventOfCode2024.dll
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.pdb
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/AdventOfCode2024.genruntimeconfig.cache
+/home/pgiacomelli/scripts/AdventOfCode/2024/AdventOfCode2024/obj/Debug/net8.0/ref/AdventOfCode2024.dll
