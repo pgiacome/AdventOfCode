@@ -1,0 +1,362 @@
+﻿write a net core program that solve the following puzzle "As the search for the Chief continues, a small Elf who lives on the station tugs on your shirt; she'd like to know if you could help her with her word search (your puzzle input). She only has to find one word: XMAS. This word search allows words to be horizontal, vertical, diagonal, written backwards, or even overlapping other words. It's a little unusual, though, as you don't merely need to find one instance of XMAS - you need to find all of them. Here are a few ways XMAS might appear, where irrelevant characters have been replaced with .: ..X... .SAMX. .A..A. XMAS.S .X.... The actual word search will be full of letters instead. For example: MMMSXXMASM MSAMXMSMSA AMXSXMAAMM MSAMASMSMX XMASAMXAMM XXAMMXXAMA SMSMSASXSS SAXAMASAAA MAMMMXMMMM MXMXAXMASX In this word search, XMAS occurs a total of 18 times; here's the same word search again, but where letters not involved in any XMAS have been replaced with .: ....XXMAS. .SAMXMS... ...S..A... ..A.A.MS.X XMASAMX.MM X.....XA.A S.S.S.S.SS .A.A.A.A.A ..M.M.M.MM .X.X.XMASX Take a look at the little Elf's word search. How many times does XMAS appear?" using the following file as input input04.txt
+Copilot said:
+Sure, I can help with that! Below is a .NET Core program that reads the word search from the provided file and counts all occurrences of the word "XMAS" in all possible directions.
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string[] lines = File.ReadAllLines("input04.txt");
+        char[,] grid = new char[lines.Length, lines[0].Length];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            for (int j = 0; j < lines[i].Length; j++)
+            {
+                grid[i, j] = lines[i][j];
+            }
+        }
+
+        string word = "XMAS";
+        int count = CountWordOccurrences(grid, word);
+        Console.WriteLine($"The word '{word}' appears {count} times.");
+    }
+
+    static int CountWordOccurrences(char[,] grid, string word)
+    {
+        int count = 0;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+        int wordLength = word.Length;
+
+        int[][] directions = new int[][]
+        {
+            new int[] { 0, 1 },   // right
+            new int[] { 1, 0 },   // down
+            new int[] { 1, 1 },   // down-right
+            new int[] { 1, -1 },  // down-left
+            new int[] { 0, -1 },  // left
+            new int[] { -1, 0 },  // up
+            new int[] { -1, -1 }, // up-left
+            new int[] { -1, 1 }   // up-right
+        };
+
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                foreach (var dir in directions)
+                {
+                    if (IsWordPresent(grid, word, r, c, dir[0], dir[1]))
+                    {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
+
+    static bool IsWordPresent(char[,] grid, string word, int startRow, int startCol, int rowDir, int colDir)
+    {
+        int wordLength = word.Length;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+
+        for (int i = 0; i < wordLength; i++)
+        {
+            int newRow = startRow + i * rowDir;
+            int newCol = startCol + i * colDir;
+
+            if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols || grid[newRow, newCol] != word[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+This program reads the word search from input04.txt, initializes a grid, and then counts all occurrences of the word "XMAS" in all possible directions (horizontal, vertical, diagonal, and their reverses). You can run this program in a .NET Core environment to get the count of "XMAS" occurrences. Let me know if you need any further assistance!
+
+
+Modifica in Pages
+
+
+Il contenuto generato dall'intelligenza artificiale potrebbe non essere corretto
+
+
+4 dicembre 2024 alle ore 12:23
+You said:could you do the same task using only one method
+Copilot said:
+Sure! Here's a simplified version of the program that uses only one method to count all occurrences of the word "XMAS" in the word search:
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string[] lines = File.ReadAllLines("input04.txt");
+        char[,] grid = new char[lines.Length, lines[0].Length];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            for (int j = 0; j < lines[i].Length; j++)
+            {
+                grid[i, j] = lines[i][j];
+            }
+        }
+
+        string word = "XMAS";
+        int count = CountWordOccurrences(grid, word);
+        Console.WriteLine($"The word '{word}' appears {count} times.");
+    }
+
+    static int CountWordOccurrences(char[,] grid, string word)
+    {
+        int count = 0;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+        int wordLength = word.Length;
+
+        int[][] directions = new int[][]
+        {
+            new int[] { 0, 1 },   // right
+            new int[] { 1, 0 },   // down
+            new int[] { 1, 1 },   // down-right
+            new int[] { 1, -1 },  // down-left
+            new int[] { 0, -1 },  // left
+            new int[] { -1, 0 },  // up
+            new int[] { -1, -1 }, // up-left
+            new int[] { -1, 1 }   // up-right
+        };
+
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                foreach (var dir in directions)
+                {
+                    bool found = true;
+                    for (int i = 0; i < wordLength; i++)
+                    {
+                        int newRow = r + i * dir[0];
+                        int newCol = c + i * dir[1];
+
+                        if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols || grid[newRow, newCol] != word[i])
+                        {
+                            found = false;
+                            break;
+                        }
+                    }
+                    if (found)
+                    {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
+}
+This version combines the logic into a single method, CountWordOccurrences, which handles both the counting and the checking of word occurrences in all directions. Let me know if you need any further assistance!
+
+
+Modifica in Pages
+
+
+Il contenuto generato dall'intelligenza artificiale potrebbe non essere corretto
+
+
+4 dicembre 2024 alle ore 12:25
+You said:could you write the code using only the main method?
+Copilot said:
+Sure! Here's the code with everything contained within the Main method:
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string[] lines = File.ReadAllLines("input04.txt");
+        char[,] grid = new char[lines.Length, lines[0].Length];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            for (int j = 0; j < lines[i].Length; j++)
+            {
+                grid[i, j] = lines[i][j];
+            }
+        }
+
+        string word = "XMAS";
+        int count = 0;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+        int wordLength = word.Length;
+
+        int[][] directions = new int[][]
+        {
+            new int[] { 0, 1 },   // right
+            new int[] { 1, 0 },   // down
+            new int[] { 1, 1 },   // down-right
+            new int[] { 1, -1 },  // down-left
+            new int[] { 0, -1 },  // left
+            new int[] { -1, 0 },  // up
+            new int[] { -1, -1 }, // up-left
+            new int[] { -1, 1 }   // up-right
+        };
+
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                foreach (var dir in directions)
+                {
+                    bool found = true;
+                    for (int i = 0; i < wordLength; i++)
+                    {
+                        int newRow = r + i * dir[0];
+                        int newCol = c + i * dir[1];
+
+                        if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols || grid[newRow, newCol] != word[i])
+                        {
+                            found = false;
+                            break;
+                        }
+                    }
+                    if (found)
+                    {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        Console.WriteLine($"The word '{word}' appears {count} times.");
+    }
+}
+This version of the program keeps all the logic within the Main method, making it a single-method solution. Let me know if you need any further assistance!
+
+
+Modifica in Pages
+
+
+Il contenuto generato dall'intelligenza artificiale potrebbe non essere corretto
+
+
+4 dicembre 2024 alle ore 12:33
+You said:the answer is correct using the previous puzzle write a program in dot net that solve the following puzzle "The Elf looks quizzically at you. Did you misunderstand the assignment? Looking for the instructions, you flip over the word search to find that this isn't actually an XMAS puzzle; it's an X-MAS puzzle in which you're supposed to find two MAS in the shape of an X. One way to achieve that is like this: M.S .A. M.S Irrelevant characters have again been replaced with . in the above diagram. Within the X, each MAS can be written forwards or backwards. Here's the same example from before, but this time all of the X-MASes have been kept instead: .M.S...... ..A..MSMS. .M.S.MAA.. ..A.ASMSM. .M.S.M.... .......... S.S.S.S.S. .A.A.A.A.. M.M.M.M.M. .......... In this example, an X-MAS appears 9 times. Flip the word search from the instructions back over to the word search side and try again. How many times does an X-MAS appear?" using the same input file of the previous prompt
+Copilot said:
+Sure! Here's a .NET Core program that reads the word search from the provided file and counts all occurrences of the X-MAS pattern, where two "MAS" sequences form an X shape.
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string[] lines = File.ReadAllLines("input04.txt");
+        char[,] grid = new char[lines.Length, lines[0].Length];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            for (int j = 0; j < lines[i].Length; j++)
+            {
+                grid[i, j] = lines[i][j];
+            }
+        }
+
+        int count = 0;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+
+        for (int r = 0; r < rows - 2; r++)
+        {
+            for (int c = 0; c < cols - 2; c++)
+            {
+                // Check for X-MAS pattern
+                if (IsXMasPattern(grid, r, c))
+                {
+                    count++;
+                }
+            }
+        }
+
+        Console.WriteLine($"The X-MAS pattern appears {count} times.");
+    }
+
+    static bool IsXMasPattern(char[,] grid, int r, int c)
+    {
+        // Check the X-MAS pattern
+        return (grid[r, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c + 2] == 'S' &&
+                grid[r + 2, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r, c + 2] == 'S') ||
+               (grid[r, c + 2] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c] == 'S' &&
+                grid[r, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c + 2] == 'S');
+    }
+}
+This program reads the word search from input04.txt, initializes a grid, and then counts all occurrences of the X-MAS pattern. The IsXMasPattern method checks for the specific pattern where two "MAS" sequences form an X shape. You can run this program in a .NET Core environment to get the count of X-MAS occurrences. Let me know if you need any further assistance!
+
+
+Modifica in Pages
+
+
+Il contenuto generato dall'intelligenza artificiale potrebbe non essere corretto
+
+
+4 dicembre 2024 alle ore 12:34
+You said:could you rewrite the same program only using the main method?
+Copilot said:
+Sure! Here's the program with all the logic contained within the Main method:
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string[] lines = File.ReadAllLines("input04.txt");
+        char[,] grid = new char[lines.Length, lines[0].Length];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            for (int j = 0; j < lines[i].Length; j++)
+            {
+                grid[i, j] = lines[i][j];
+            }
+        }
+
+        int count = 0;
+        int rows = grid.GetLength(0);
+        int cols = grid.GetLength(1);
+
+        for (int r = 0; r < rows - 2; r++)
+        {
+            for (int c = 0; c < cols - 2; c++)
+            {
+                // Check for X-MAS pattern
+                if ((grid[r, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c + 2] == 'S' &&
+                     grid[r + 2, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r, c + 2] == 'S') ||
+                    (grid[r, c + 2] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c] == 'S' &&
+                     grid[r, c] == 'M' && grid[r + 1, c + 1] == 'A' && grid[r + 2, c + 2] == 'S'))
+                {
+                    count++;
+                }
+            }
+        }
+
+        Console.WriteLine($"The X-MAS pattern appears {count} times.");
+    }
+}
+This version of the program keeps all the logic within the Main method, making it a single-method solution. Let me know if you need any further assistance!
