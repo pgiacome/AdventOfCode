@@ -7,8 +7,60 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Day04_1();
-        Day04_2();
+        //Day04_1();
+        //Day04_2();
+        Day05_1();
+    }
+
+    private static void Day05_1() 
+    {
+        string InputFolder = Environment.CurrentDirectory;
+
+        string folderSeparator = System.IO.Path.DirectorySeparatorChar.ToString();
+
+        string filePath = InputFolder + folderSeparator + "Day05" + folderSeparator + "input05.txt";
+
+        var input = File.ReadAllText(filePath);
+        var sections = input.Split(new[] { "\n\n" }, StringSplitOptions.None);
+        
+        // Parse the rules
+        var rules = sections[0].Split('\n')
+            .Select(line => line.Split('|'))
+            .Select(parts => (X: int.Parse(parts[0]), Y: int.Parse(parts[1])))
+            .ToList();
+        
+        // Parse the updates
+        var updates = sections[1].Split('\n')
+            .Select(line => line.Split(',').Select(int.Parse).ToList())
+            .ToList();
+        
+        int middlePagesSum = 0;
+        
+        foreach (var update in updates)
+        {
+            bool isCorrectOrder = true;
+            foreach (var (X, Y) in rules)
+            {
+                if (update.Contains(X) && update.Contains(Y))
+                {
+                    if (update.IndexOf(X) > update.IndexOf(Y))
+                    {
+                        isCorrectOrder = false;
+                        break;
+                    }
+                }
+            }
+            if (isCorrectOrder)
+            {
+                middlePagesSum += update[update.Count / 2];
+            }
+        }
+        
+        Console.WriteLine($"The sum of the middle page numbers from the correctly-ordered updates is {middlePagesSum}.");
+
+
+
+
     }
 
     private static void Day04_2()
