@@ -46,8 +46,7 @@
               "RelativeToolTip": "AdventOfCode2024\\Day05\\PromptDay05.txt",
               "ViewState": "AQIAAPQAAAAAAAAAAAAgwB4BAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-10T12:34:06.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T12:34:06.548Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "AdventOfCode2024\\Day05\\input05.txt",
               "ViewState": "AQIAADIFAAAAAAAAAAAAAFMFAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-10T12:20:43.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T12:20:43.588Z"
             },
             {
               "$type": "Document",
@@ -94,7 +92,7 @@
               "RelativeDocumentMoniker": "AdventOfCode2024\\Program.cs",
               "ToolTip": "D:\\AdventOfCode\\2024\\AdventOfCode2024\\Program.cs",
               "RelativeToolTip": "AdventOfCode2024\\Program.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAiwGIAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T08:35:17.077Z",
               "EditorCaption": ""
