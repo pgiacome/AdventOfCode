@@ -56,3 +56,5 @@ D:\AdventOfCode\2024\AdventOfCode2024\obj\Debug\net8.0\AdventOfCode2024.pdb
 D:\AdventOfCode\2024\AdventOfCode2024\obj\Debug\net8.0\AdventOfCode2024.genruntimeconfig.cache
 D:\AdventOfCode\2024\AdventOfCode2024\obj\Debug\net8.0\ref\AdventOfCode2024.dll
 D:\AdventOfCode\2024\AdventOfCode2024\bin\Debug\net8.0\Day05\input05.txt
+D:\AdventOfCode\2024\AdventOfCode2024\bin\Debug\net8.0\Day05\PromptDay05.txt
+D:\AdventOfCode\2024\AdventOfCode2024\bin\Debug\net8.0\Day06\input06.txt

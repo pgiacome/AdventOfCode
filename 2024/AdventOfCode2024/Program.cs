@@ -7,10 +7,103 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //Day04_1();
-        //Day04_2();
+        /*Day04_1();
+        Day04_2();
         Day05_1();
         Day05_2();
+        */
+        Day06_1(); ;
+    }
+
+    private static void Day06_1()
+    {
+
+        string InputFolder = Environment.CurrentDirectory;
+
+        string folderSeparator = System.IO.Path.DirectorySeparatorChar.ToString();
+
+        string filePath = InputFolder + folderSeparator + "Day06" + folderSeparator + "input06.txt";
+
+        // Read the input file
+        string[] mapData = File.ReadAllLines(filePath);
+
+        // Parse the map
+        var labMap = new List<string>();
+        foreach (var line in mapData)
+        {
+            labMap.Add(line);
+        }
+
+        // Find the initial position and direction of the guard
+        (int x, int y, char direction) guard = (0, 0, ' ');
+        for (int y = 0; y < labMap.Count; y++)
+        {
+            for (int x = 0; x < labMap[y].Length; x++)
+            {
+                if ("^>v<".Contains(labMap[y][x]))
+                {
+                    guard = (x, y, labMap[y][x]);
+                    break;
+                }
+            }
+        }
+
+        // Initialize the set of visited positions
+        var visitedPositions = new HashSet<(int, int)>();
+        visitedPositions.Add((guard.x, guard.y));
+
+        // Function to turn right
+        char TurnRight(char direction)
+        {
+            return direction switch
+            {
+                '^' => '>',
+                '>' => 'v',
+                'v' => '<',
+                '<' => '^',
+                _ => direction,
+            };
+        }
+
+        // Function to move forward
+        (int, int) MoveForward((int x, int y) position, char direction)
+        {
+            return direction switch
+            {
+                '^' => (position.x, position.y - 1),
+                '>' => (position.x + 1, position.y),
+                'v' => (position.x, position.y + 1),
+                '<' => (position.x - 1, position.y),
+                _ => position,
+            };
+        }
+
+        // Function to check if within bounds
+        bool IsWithinBounds((int x, int y) position, List<string> mapData)
+        {
+            return position.y >= 0 && position.y < mapData.Count && position.x >= 0 && position.x < mapData[position.y].Length;
+        }
+
+        // Simulate the guard's movement
+        while (IsWithinBounds((guard.x, guard.y), labMap))
+        {
+            var nextPosition = MoveForward((guard.x, guard.y), guard.direction);
+            if (!IsWithinBounds(nextPosition, labMap) || labMap[nextPosition.Item2][nextPosition.Item1] == '#')
+            {
+                guard.direction = TurnRight(guard.direction);
+                Console.WriteLine("guardia ha girato a dx");
+            }
+            else
+            {
+                guard = (nextPosition.Item1, nextPosition.Item2, guard.direction);
+                visitedPositions.Add((guard.x, guard.y));
+            }
+        }
+
+        // Output the number of distinct positions visited
+        Console.WriteLine($"Distinct positions visited: {visitedPositions.Count}");
+
+
     }
 
     private static void Day05_2()

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\AdventOfCode\\2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|d:\\adventofcode\\2024\\adventofcode2024\\day05\\promptday05.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|solutionrelative:adventofcode2024\\day05\\promptday05.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|d:\\adventofcode\\2024\\adventofcode2024\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|solutionrelative:adventofcode2024\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|d:\\adventofcode\\2024\\adventofcode2024\\day05\\promptday05.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|solutionrelative:adventofcode2024\\day05\\promptday05.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C5AF8E1-4C80-4755-B8A7-185BFA520593}|AdventOfCode2024\\AdventOfCode2024.csproj|d:\\adventofcode\\2024\\adventofcode2024\\day05\\input05.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -30,24 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PromptDay05.txt",
               "DocumentMoniker": "D:\\AdventOfCode\\2024\\AdventOfCode2024\\Day05\\PromptDay05.txt",
               "RelativeDocumentMoniker": "AdventOfCode2024\\Day05\\PromptDay05.txt",
               "ToolTip": "D:\\AdventOfCode\\2024\\AdventOfCode2024\\Day05\\PromptDay05.txt",
               "RelativeToolTip": "AdventOfCode2024\\Day05\\PromptDay05.txt",
-              "ViewState": "AQIAAPQAAAAAAAAAAAAgwCsBAAC1AAAA",
+              "ViewState": "AQIAAPQAAAAAAAAAAAAgwB4BAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-12-10T12:34:06.548Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -88,13 +88,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\AdventOfCode\\2024\\AdventOfCode2024\\Program.cs",
               "RelativeDocumentMoniker": "AdventOfCode2024\\Program.cs",
               "ToolTip": "D:\\AdventOfCode\\2024\\AdventOfCode2024\\Program.cs",
               "RelativeToolTip": "AdventOfCode2024\\Program.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowEgAAAAIAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwGIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T08:35:17.077Z",
               "EditorCaption": ""
